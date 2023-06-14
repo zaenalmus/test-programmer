@@ -17,8 +17,8 @@ class ProdukController extends Controller
         public function getApi()
         {
             $sc = 'https://recruitment.fastprint.co.id/tes/api_tes_programmer';
-            $username = 'tesprogrammer120623C09';
-            $password = 'c8b0c5bcf0137f2a7c7a7441440a8150';
+            $username = 'tesprogrammer130623C09';
+            $password = md5('bisacoding-13-06-23');
 
             $url = Http::asForm()->post($sc, [
                 'username' => $username,
@@ -36,6 +36,7 @@ class ProdukController extends Controller
                 $produk->status = $d['status'];
                 $produk->save();
             }
+            return Redirect()->route('dashboard');
         }
 
     public function index()
