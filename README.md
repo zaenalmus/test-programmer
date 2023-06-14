@@ -1,66 +1,69 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Tes Programmer
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
 
-## About Laravel
+Ini adalah repositori untuk proyek **Tes Programmer**.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Deskripsi
+Proyek ini merupakan aplikasi web yang dibangun menggunakan framework PHP Laravel dan database MySQL. Tujuannya adalah untuk mengambil data produk dari link API yang disediakan, menyimpan data tersebut ke dalam database, dan menampilkannya di web. Aplikasi ini juga dilengkapi dengan fitur tambah, edit, dan hapus data, termasuk validasi input dan konfirmasi penghapusan.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Teknologi yang Digunakan
+**Software:** Visual Studio Code (kode editor), XAMPP (database MySQL), Postman (untuk pengujian API), Google Chrome  
+**Framework:** Laravel v9.19, Bootstrap  
+**Bahasa Pemrograman:** PHP v8.0, HTML, CSS  
+**Ekstensi PHP Aktif:** curl, fileinfo, gd, gettext, mbstring, exif, mysqli, openssl, pdo_mysql  
+**Alat:** Composer v2.5.7, Git
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Persyaratan
+- PC/Laptop
+- Koneksi internet
+- Web browser
+- Terpasang Composer
+- Terpasang PHP v8.0 & ekstensi PHP yang diperlukan
+- Terpasang MySQL
+- Terpasang Git
+- Terminal (cmd, PowerShell, Git Bash)
+- Kode editor
 
-## Learning Laravel
+## Instalasi
+1. Clone proyek dengan menjalankan perintah berikut di terminal:  
+   `git clone https://github.com/zaenalmus/test-programmer.git`
+2. Buka folder yang telah di-clone dan buka di kode editor.
+3. Di terminal kode editor, jalankan perintah `composer install`.
+4. Setelah instalasi selesai, jalankan perintah `php artisan key:generate`.
+5. Salin file `.env.example` dan ubah namanya menjadi `.env`, atau jalankan perintah `copy .env.example .env`.
+6. Jalankan perintah `php artisan migrate` dan tekan "y" kemudian enter untuk melakukan migrasi database.
+7. Terakhir, jalankan perintah `php artisan serve` untuk memulai server Laravel.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Penggunaan
+1. Setelah menjalankan Laravel, masukkan tautan server lokal pada browser, misalnya: "http://127.0.0.1:8000", dan arahkan ke `/getApi` untuk mendapatkan data dari API.
+2. Sebelum itu, perbarui username dan password untuk masuk dan mengambil data dari API.
+3. Buka file `app/Http/Controllers/ProdukController.php` dan perbarui hal-hal berikut:
+   - Username: 'tesprogrammer' + tanggal saat ini (hari, bulan, dua digit terakhir tahun) + waktu server  
+     Contoh: 'tesprogrammer140623C09'
+   - Password: 'bisacoding - Tanggal Sekarang - Bulan Sekarang - Dua Angka Terakhir Tahun Sekarang'  
+     Contoh: 'bisacoding-14-06-23'
+   - Atau Anda dapat mengunjungi tautan [https://recruitment.fastprint.co.id/tes/programmer](https://recruitment.fastprint.co.id/tes/programmer) untuk melihat username dan password.
+4. Kembali ke browser dan arahkan kembali ke `http://127.0.0.1:8000/getApi` untuk melihat data dari API dan menggunakan fitur tambah, edit, dan hapus.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Struktur Direktori Proyek
+- `app`: Direktori yang berisi kode aplikasi termasuk model, controller, dan logika bisnis lainnya.
+- `database`: Direktori yang berisi migrasi database.
+- `public`: Direktori yang berisi file publik seperti gambar dan file JavaScript dan CSS.
+- `resources`: Direktori yang berisi file tampilan (view) aplikasi seperti file Blade, CSS, dan JavaScript.
+- `routes`: Direktori yang berisi file rute (route) aplikasi.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Fitur-Fitur
+- Tambah, Edit, Hapus Produk: Pengguna dapat menambahkan, mengedit, dan menghapus data produk. Input yang diperlukan dapat dimasukkan, kemudian klik tombol "Simpan" untuk tambah dan edit. Untuk hapus, cukup pilih data yang ingin dihapus, lalu konfirmasi penghapusan.
 
-## Laravel Sponsors
+## Masalah Umum
+- Cloning failed using an ssh key for authentication: Bisa diabaikan dengan menekan enter, sehingga proses cloning akan berjalan.
+- SSL certificate: Pastikan telah menginstal ekstensi PHP yang diperlukan di file `php.ini`.
+- Error saat menjalankan `php artisan serve`: Biasanya disebabkan oleh dependensi yang belum diunduh. Jalankan perintah `composer update` untuk mengatasinya.
+- cURL error 6: Could not resolve host: Pastikan koneksi internet telah aktif.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Referensi
+- Dokumentasi Laravel: [https://laravel.com](https://laravel.com)
+- Channel YouTube: [https://youtube.com/@sandhikagalihWPU](https://youtube.com/@sandhikagalihWPU)
+- [https://youtu.be/JUMkbDhAFCw](https://youtu.be/JUMkbDhAFCw)
+- [https://youtu.be/tv7tqf3AC7Y](https://youtu.be/tv7tqf3AC7Y)
+- Template Bootstrap: NiceAdmin v2.5.0 [https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/](https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/)
